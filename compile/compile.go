@@ -11,10 +11,6 @@ import (
 	"strings"
 )
 
-// func Base64Encode(src []byte) string {
-// 	return base64.StdEncoding.EncodeToString(src)
-// }
-
 // compile pdf from tex file and return pdfs path
 func Latexmk(source string, outdir string) (string, error) {
 	cmd := exec.Command(
