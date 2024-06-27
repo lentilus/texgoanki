@@ -72,7 +72,7 @@ func main() {
 	// fmt.Println(cards)
 
 	// the Anki-Connect API
-	connect := api.AnkiConnect{Url: "http://localhost:8765"}
+	connect := api.AnkiConnect{Url: "http://anki:8765"}
 
 	// if the deck does not exist, create it
 	decks, err := api.GetDecks(&connect)
