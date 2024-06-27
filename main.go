@@ -183,8 +183,8 @@ func main() {
 			continue
 		}
 
-		front_file := hash + "_front.svg"
-		back_file := hash + "_back.svg"
+		front_file := deck + hash + "_front.svg"
+		back_file := deck + hash + "_back.svg"
 		api.StoreMediaFile(&connect, front_file, front)
 		api.StoreMediaFile(&connect, back_file, back)
 
