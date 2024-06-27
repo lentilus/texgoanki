@@ -62,7 +62,6 @@ func main() {
 	for _, a := range os.Args[5:] {
 		context = append(context, a)
 	}
-	fmt.Println(context)
 
 	// extract the relevant source code
 	cards, err := parse(src)

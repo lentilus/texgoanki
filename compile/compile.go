@@ -55,6 +55,18 @@ func Pdf2svg(source string, target string) error {
 	return err
 }
 
+func ResizeSvg(source string) error {
+	cmd := exec.Command(
+		"inkscape",
+		"--actions",
+		"select-all;fit-canvas-to-selection",
+		"--export-overwrite",
+		source,
+	)
+	err := cmd.Run()
+	return err
+}
+
 // walks directory and returns cummulated size of files in bytes
 func dirSize(path string) (int64, error) {
 	var size int64
@@ -150,6 +162,9 @@ func Src2svg(
 	if err != nil {
 		return "", err
 	}
+
+	// try to rezise (we dont care about errors)
+	ResizeSvg(svg)
 
 	b, err := os.ReadFile(svg)
 	if err != nil {
